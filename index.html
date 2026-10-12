@@ -1,1 +1,489 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#151411">
+<title>A C Hair Dressing | Roma</title>
+<meta name="description" content="A C Hair Dressing a Roma, in Via Plauto 32. Scopri il salone e contatta il team per informazioni e appuntamenti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#151411;
+  --dark:#211f1a;
+  --ivory:#f7f4ee;
+  --cream:#eae2d5;
+  --gold:#c8a96a;
+  --lightgold:#e2cb98;
+  --muted:#777168;
+  --line:#ded3c0;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:var(--sans);background:var(--ivory);color:var(--black);line-height:1.7}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1160px,90%);margin:auto}
+h1,h2,h3,.brand,.footer-brand{font-family:var(--serif);font-weight:500}
+h2{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-1px}
+.eyebrow{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+header{height:76px;position:fixed;z-index:1000;inset:0 0 auto;background:rgba(21,20,17,.97);backdrop-filter:blur(14px);border-bottom:1px solid #39352b}
+.navbar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:32px;color:white;line-height:1;white-space:nowrap}
+.brand span,.footer-brand span{color:var(--gold)}
+.nav-links{list-style:none;display:flex;align-items:center;gap:23px}
+.nav-links a:not(.nav-cta){font-size:11px;color:#e8e2d7}
+.nav-links a:hover{color:var(--lightgold)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--gold);font-size:10px;font-weight:700;letter-spacing:1px;transition:.25s;cursor:pointer}
+.nav-cta{padding:13px 17px;background:var(--gold);color:var(--black)}
+.btn{min-height:53px;padding:15px 23px}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-outline{color:white;background:transparent}
+.btn-dark{background:var(--black);border-color:var(--black);color:white}
+.btn:hover,.nav-cta:hover{transform:translateY(-2px);background:var(--lightgold);color:var(--black);border-color:var(--lightgold)}
+.menu-toggle{display:none;background:none;color:white;border:1px solid #635942;width:43px;height:43px;font-size:23px;cursor:pointer}
+
+.hero{min-height:94svh;padding:145px 20px 100px;display:grid;place-items:center;text-align:center;color:white;position:relative;isolation:isolate;overflow:hidden;background:#171511}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,11,9,.82),rgba(12,11,9,.4),rgba(12,11,9,.75)),linear-gradient(0deg,rgba(12,11,9,.65),transparent 65%)}
+.hero-content{max-width:880px}
+.hero .eyebrow{letter-spacing:5px;margin-bottom:25px}
+.hero h1{font-size:clamp(64px,10vw,115px);line-height:.88;letter-spacing:-2px;margin-bottom:27px}
+.hero h1 em,.about-copy h2 em,.contact-copy h2 em{color:var(--lightgold);font-weight:400}
+.hero p{max-width:610px;margin:auto;color:#e8e2d8;font-size:15px;font-weight:300}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-note{margin-top:38px!important;font-size:10px!important;letter-spacing:3px;text-transform:uppercase}
+
+.intro-strip{background:var(--black);color:#eee5d7;border-block:1px solid #4b402c}
+.strip-inner{min-height:82px;display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,65px);flex-wrap:wrap;padding:18px 0}
+.strip-item{font-family:var(--serif);font-size:21px;display:flex;align-items:center;gap:12px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+section.section{padding:100px 0}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 50px}
+.section-heading .eyebrow{margin-bottom:14px}
+.section-heading h2 span{font-style:italic;color:#a1834c}
+.section-heading p{max-width:610px;margin:18px auto 0;font-size:13px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.services{background:linear-gradient(180deg,#f7f4ee,#eee6d9)}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:27px;max-width:980px;margin:auto}
+.service-card{background:#fffdf8;border:1px solid #e1d5c2;box-shadow:0 12px 35px #3027190c;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.service-card:hover{transform:translateY(-7px);box-shadow:0 22px 50px #30271920}
+.service-image{height:290px;position:relative;overflow:hidden;background:#d9cebd}
+.service-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.service-card:hover .service-image img{transform:scale(1.05)}
+.service-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#151411a8,transparent 65%)}
+.service-number{position:absolute;z-index:1;top:17px;left:17px;width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:#151411c9;color:var(--lightgold);font-family:var(--serif);font-size:20px}
+.service-image-label{position:absolute;z-index:1;bottom:18px;left:23px;color:white;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.service-content{padding:28px;display:flex;flex-direction:column;flex:1}
+.service-heading-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.service-card h3{font-size:38px;line-height:1.1}
+.service-symbol{width:43px;height:43px;display:grid;place-items:center;border:1px solid #dfcda9;border-radius:50%;color:#a1844e;font-size:21px;flex-shrink:0}
+.service-card p{font-size:13px;color:#716b61;line-height:1.9}
+.service-details{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+.service-detail{padding:7px 10px;background:#f3eee4;border:1px solid #e6dccb;color:#67583f;font-size:10px}
+.service-book{margin-top:auto;min-height:52px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--black);border:1px solid var(--black);color:white;font-size:10px;font-weight:700;letter-spacing:.8px;transition:.25s}
+.service-book span:last-child{color:var(--lightgold);font-size:18px}
+.service-book:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.service-book:hover span:last-child{color:var(--black)}
+.service-footer{text-align:center;margin-top:35px}
+.service-footer p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.note{text-align:center;font-size:10px;color:#827a6c;margin-top:23px}
+
+.about{background:var(--dark);color:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,7vw,90px)}
+.about-visual{position:relative;min-height:590px}
+.about-image{position:absolute;inset:0 25px 25px 0;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover}
+.about-frame{position:absolute;inset:24px 0 0 24px;border:1px solid var(--gold);pointer-events:none}
+.about-caption{position:absolute;right:0;bottom:0;background:var(--gold);color:var(--black);padding:17px 22px}
+.about-caption strong{display:block;font:500 27px/1.1 var(--serif)}
+.about-caption span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+.about-copy .eyebrow{margin-bottom:15px}
+.about-copy h2{font-size:clamp(48px,5.5vw,72px);margin-bottom:25px}
+.about-copy p{font-size:13px;color:#ccc6ba;margin-bottom:17px}
+.about-rule{width:60px;height:1px;background:var(--gold);margin:27px 0}
+.about-copy .btn{margin-top:8px}
+
+.gallery{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:1.25fr .85fr .85fr;grid-template-rows:235px 235px;gap:12px}
+.gallery-item{position:relative;overflow:hidden;background:#d6cdbf;border:0;padding:0;cursor:zoom-in;min-width:0}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(.85)}
+.gallery-item:after{content:"+";position:absolute;right:13px;bottom:13px;width:35px;height:35px;display:grid;place-items:center;background:#151411c9;border:1px solid #ffffff8a;color:white;font-size:22px;opacity:0;transition:.25s}
+.gallery-item:hover:after,.gallery-item:focus-visible:after{opacity:1}
+.lightbox{position:fixed;inset:0;z-index:3000;background:#080807f2;display:none;align-items:center;justify-content:center;padding:65px 20px 25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:94vw;max-height:82vh;object-fit:contain}
+.lightbox-close{position:absolute;right:20px;top:15px;width:45px;height:45px;background:none;border:1px solid #aaa;color:white;font-size:28px;cursor:pointer}
+
+.contact{background:var(--black);color:white}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:stretch}
+.contact-copy .eyebrow{margin-bottom:15px}
+.contact-copy h2{font-size:clamp(49px,6vw,75px);margin-bottom:23px}
+.contact-intro{font-size:13px;color:#c4c0b7;margin-bottom:30px;max-width:420px}
+.contact-list{display:grid;gap:20px}
+.contact-item{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:start}
+.contact-icon{width:32px;height:32px;border:1px solid #5b5039;color:var(--gold);display:grid;place-items:center}
+.contact-item strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--gold);margin-bottom:3px}
+.contact-item p,.contact-item a{font-size:12px;color:#e9e5dc}
+.contact-item a:hover{color:var(--lightgold)}
+.contact-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.map-wrap{min-height:460px;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px #0004}
+.map-wrap iframe{display:block;width:100%;height:100%;min-height:460px;border:0}
+
+.final-cta{background:var(--gold);color:var(--black);padding:55px 0}
+.final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.final-cta h2{font-size:clamp(35px,4.5vw,52px)}
+.final-cta p{font-size:12px;margin-top:6px}
+
+footer{background:#0e0d0b;color:#a8a399;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px;padding-bottom:32px;border-bottom:1px solid #302d27}
+.footer-brand{font-size:38px;color:white;line-height:1}
+.footer-description{max-width:350px;font-size:12px;margin-top:14px}
+footer h3{font:700 10px var(--sans);letter-spacing:1.7px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer p,footer a{font-size:11px;line-height:2;color:#bcb7ac}
+footer a:hover{color:var(--lightgold)}
+.footer-bottom{padding-top:19px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:#77736c}
+.floating-booking{position:fixed;left:16px;bottom:16px;z-index:900;background:var(--gold);color:var(--black);padding:14px 18px;font-size:10px;font-weight:700;letter-spacing:.8px;box-shadow:0 6px 25px #0004;transition:.2s}
+.floating-booking:hover{transform:translateY(-3px);background:var(--lightgold)}
+
+@media(max-width:1000px){
+ .nav-links{gap:14px}
+ .nav-links a:not(.nav-cta){font-size:10px}
+ .service-image{height:245px}
+ .service-content{padding:23px}
+ .about-grid{gap:40px}
+ .about-visual{min-height:520px}
+ .gallery-grid{grid-template-rows:210px 210px}
+ .contact-grid{gap:28px}
+}
+@media(max-width:800px){
+ .menu-toggle{display:block}
+ .nav-links{position:fixed;top:76px;left:0;right:0;bottom:0;height:calc(100dvh - 76px);overflow-y:auto;background:#151411;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:20px 7% 40px;visibility:hidden;opacity:0;transform:translateY(-6px);transition:.2s}
+ .nav-links.active{visibility:visible;opacity:1;transform:translateY(0)}
+ .nav-links li{border-bottom:1px solid #39362e}
+ .nav-links a:not(.nav-cta){display:block;padding:16px 0;font-size:13px}
+ .nav-links .nav-cta{margin-top:20px;width:100%;padding:16px}
+ .about-grid,.contact-grid{grid-template-columns:1fr}
+ .about-visual{min-height:530px;max-width:620px;width:100%;margin:auto}
+ .about-copy{max-width:650px}
+ .contact-grid{gap:32px}
+ .map-wrap,.map-wrap iframe{min-height:390px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:560px){
+ section.section{padding:75px 0}
+ .container{width:88%}
+ .brand{font-size:27px}
+ .hero{padding:120px 20px 90px}
+ .hero h1{font-size:clamp(56px,14vw,78px);letter-spacing:-1px}
+ .hero .eyebrow{letter-spacing:3px}
+ .hero p{font-size:13px}
+ .hero-actions{flex-direction:column;max-width:340px;margin:28px auto 0}
+ .hero-actions .btn{width:100%}
+ .strip-inner{flex-direction:column;gap:8px}
+ .strip-item{font-size:19px}
+ .section-heading{margin-bottom:35px}
+ .section-heading h2{font-size:45px}
+ .services-grid{grid-template-columns:1fr;gap:20px}
+ .service-image{height:240px}
+ .service-content{padding:23px}
+ .service-card h3{font-size:34px}
+ .about-visual{min-height:380px}
+ .about-image{inset:0 17px 18px 0}
+ .about-frame{inset:17px 0 0 17px}
+ .about-caption{padding:13px 15px}
+ .about-caption strong{font-size:23px}
+ .about-copy h2{font-size:49px}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 145px 145px;gap:8px}
+ .gallery-item:first-child{grid-column:1/-1;grid-row:auto}
+ .gallery-item:nth-child(4){grid-column:1/-1}
+ .gallery-item:after{opacity:1;width:30px;height:30px;right:8px;bottom:8px}
+ .contact-copy h2{font-size:51px}
+ .contact-buttons{flex-direction:column}
+ .contact-buttons .btn{width:100%}
+ .map-wrap,.map-wrap iframe{min-height:320px}
+ .final-cta-inner{align-items:stretch;flex-direction:column}
+ .final-cta .btn{width:100%}
+ .footer-grid{grid-template-columns:1fr;gap:25px}
+ .footer-grid>div:first-child{grid-column:auto}
+ .footer-bottom{flex-direction:column}
+ .floating-booking{left:9px;bottom:9px;padding:12px 11px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+ <div class="container navbar">
+  <a href="#home" class="brand" aria-label="A C Hair Dressing, inizio">A C <span>Hair Dressing</span></a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <nav aria-label="Navigazione principale">
+   <ul class="nav-links" id="navLinks">
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#salone">Il salone</a></li>
+    <li><a href="#galleria">Galleria</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a class="nav-cta" href="#contatti">CONTATTA IL SALONE ↗</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+ <section class="hero" id="home">
+  <div class="hero-content">
+   <span class="eyebrow">A C Hair Dressing · Roma</span>
+   <h1>L'arte dello stile.<br><em>La cura di te.</em></h1>
+   <p>Un'esperienza dedicata alla bellezza dei capelli, allo stile personale e all'attenzione per ogni dettaglio.</p>
+   <div class="hero-actions">
+    <a class="btn btn-gold" href="#servizi">SCOPRI IL SALONE ↓</a>
+    <a class="btn btn-outline" href="tel:+39066861901">CHIAMA IL SALONE ↗</a>
+   </div>
+   <p class="hero-note">Stile · Cura · Personalità</p>
+  </div>
+ </section>
+
+ <div class="intro-strip">
+  <div class="container strip-inner">
+   <span class="strip-item"><span class="dot"></span> Attenzione ai dettagli</span>
+   <span class="strip-item"><span class="dot"></span> Stile personale</span>
+   <span class="strip-item"><span class="dot"></span> Il tuo momento</span>
+  </div>
+ </div>
+
+ <section class="section services" id="servizi">
+  <div class="container">
+   <div class="section-heading reveal">
+    <span class="eyebrow">Bellezza e stile</span>
+    <h2>Il tuo stile, <span>senza compromessi.</span></h2>
+    <p>Ogni look comincia dall'ascolto delle tue esigenze. Contatta il salone per conoscere i trattamenti disponibili e scegliere quello più adatto a te.</p>
+   </div>
+
+   <div class="services-grid">
+    <article class="service-card reveal">
+     <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=85" alt="Fotografia illustrativa di hairstyling" loading="lazy">
+      <span class="service-number">01</span>
+      <span class="service-image-label">Forma · Movimento · Stile</span>
+     </div>
+     <div class="service-content">
+      <div class="service-heading-row"><h3>Taglio e styling</h3><span class="service-symbol" aria-hidden="true">✂</span></div>
+      <p>Un look studiato per valorizzare la personalità e accompagnare il tuo stile quotidiano.</p>
+      <div class="service-details"><span class="service-detail">Stile personale</span><span class="service-detail">Cura dei dettagli</span></div>
+      <a href="tel:+39066861901" class="service-book"><span>CHIEDI INFORMAZIONI</span><span>↗</span></a>
+     </div>
+    </article>
+
+    <article class="service-card reveal">
+     <div class="service-image">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=1100&q=85" alt="Fotografia illustrativa di colore e capelli" loading="lazy">
+      <span class="service-number">02</span>
+      <span class="service-image-label">Colore · Luce · Armonia</span>
+     </div>
+     <div class="service-content">
+      <div class="service-heading-row"><h3>Colore e trattamenti</h3><span class="service-symbol" aria-hidden="true">✧</span></div>
+      <p>Scopri le possibilità per rinnovare il tuo look e valorizzare i capelli. Disponibilità e trattamenti sono da confermare direttamente con il salone.</p>
+      <div class="service-details"><span class="service-detail">Consulenza</span><span class="service-detail">Look personalizzato</span></div>
+      <a href="tel:+39066861901" class="service-book"><span>CHIEDI INFORMAZIONI</span><span>↗</span></a>
+     </div>
+    </article>
+   </div>
+
+   <div class="service-footer reveal">
+    <p>Vuoi conoscere prezzi, trattamenti e disponibilità?</p>
+    <a class="btn btn-gold" href="tel:+39066861901">CHIAMA 06 6861901 ↗</a>
+   </div>
+   <p class="note">Categorie illustrative da verificare con il salone prima della pubblicazione definitiva. Immagini non reali del locale.</p>
+  </div>
+ </section>
+
+ <section class="section about" id="salone">
+  <div class="container about-grid">
+   <div class="about-visual reveal">
+    <div class="about-image" role="img" aria-label="Fotografia illustrativa dedicata all'hairstyling"></div>
+    <div class="about-frame"></div>
+    <div class="about-caption"><strong>Il tuo stile.</strong><span>A C Hair Dressing · Roma</span></div>
+   </div>
+   <div class="about-copy reveal">
+    <span class="eyebrow">Il salone</span>
+    <h2>La bellezza<br><em>nei dettagli.</em></h2>
+    <p>Il tuo look racconta qualcosa di te. Per questo scegliere un nuovo stile dovrebbe partire dalle tue preferenze e dal risultato che desideri.</p>
+    <p>A C Hair Dressing si trova in Via Plauto 32, Roma. Contatta direttamente il salone per conoscere i servizi disponibili e organizzare il tuo appuntamento.</p>
+    <div class="about-rule"></div>
+    <a class="btn btn-gold" href="tel:+39066861901">PARLIAMONE ↗</a>
+   </div>
+  </div>
+ </section>
+
+ <section class="section gallery" id="galleria">
+  <div class="container">
+   <div class="section-heading reveal">
+    <span class="eyebrow">Ispirazione</span>
+    <h2>Un mondo di <span>possibilità.</span></h2>
+    <p>Una selezione visiva d'ispirazione dedicata all'hairstyling. Seleziona una fotografia per ingrandirla.</p>
+   </div>
+   <div class="gallery-grid reveal">
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia illustrativa uno"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Ispirazione hairstyling uno" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia illustrativa due"><img src="https://images.unsplash.com/photo-1527799820374-dcf8f9d4a388?auto=format&fit=crop&w=850&q=85" alt="Ispirazione hairstyling due" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia illustrativa tre"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=850&q=85" alt="Ispirazione hairstyling tre" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia illustrativa quattro"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=850&q=85" alt="Ispirazione beauty quattro" loading="lazy"></button>
+    <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=90" aria-label="Ingrandisci fotografia illustrativa cinque"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=850&q=85" alt="Ispirazione beauty cinque" loading="lazy"></button>
+   </div>
+   <p class="note">Le fotografie sono illustrative e non rappresentano necessariamente il salone o i suoi lavori.</p>
+  </div>
+ </section>
+
+ <section class="section contact" id="contatti">
+  <div class="container contact-grid">
+   <div class="contact-copy reveal">
+    <span class="eyebrow">Vieni a trovarci</span>
+    <h2>Il prossimo look<br><em>inizia qui.</em></h2>
+    <p class="contact-intro">Per informazioni sui servizi, sugli orari e sugli appuntamenti, contatta direttamente A C Hair Dressing.</p>
+    <div class="contact-list">
+     <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><div><strong>Indirizzo</strong><p>Via Plauto 32, Roma</p></div></div>
+     <div class="contact-item"><span class="contact-icon" aria-hidden="true">☎</span><div><strong>Telefono</strong><a href="tel:+39066861901">06 6861901</a></div></div>
+     <div class="contact-item"><span class="contact-icon" aria-hidden="true">◷</span><div><strong>Orari</strong><p>Contatta il salone per verificare gli orari di apertura.</p></div></div>
+     <div class="contact-item"><span class="contact-icon" aria-hidden="true">✧</span><div><strong>Appuntamenti</strong><p>Chiama per informazioni e disponibilità.</p></div></div>
+    </div>
+    <div class="contact-buttons">
+     <a class="btn btn-gold" href="tel:+39066861901">CHIAMA IL SALONE ↗</a>
+     <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=A%20C%20Hair%20Dressing%2C%20Via%20Plauto%2032%2C%20Roma" target="_blank" rel="noopener noreferrer">INDICAZIONI ↗</a>
+    </div>
+   </div>
+   <div class="map-wrap reveal">
+    <iframe src="https://maps.google.com/maps?q=A%20C%20Hair%20Dressing%2C%20Via%20Plauto%2032%2C%20Roma&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa per raggiungere A C Hair Dressing in Via Plauto 32 a Roma" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+   </div>
+  </div>
+ </section>
+
+ <section class="final-cta">
+  <div class="container final-cta-inner">
+   <div><h2>Il tuo prossimo appuntamento.</h2><p>Contatta il salone per conoscere disponibilità e modalità di prenotazione.</p></div>
+   <a class="btn btn-dark" href="tel:+39066861901">CHIAMA 06 6861901 ↗</a>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-brand">A C <span>Hair Dressing</span></div><p class="footer-description">Un progetto dimostrativo per A C Hair Dressing, Roma. Informazioni e servizi da confermare con il salone.</p></div>
+   <div><h3>Contatti</h3><p>Via Plauto 32<br>Roma</p><p><a href="tel:+39066861901">06 6861901</a></p></div>
+   <div><h3>Esplora</h3><p><a href="#servizi">Servizi</a></p><p><a href="#salone">Il salone</a></p><p><a href="#galleria">Galleria</a></p><p><a href="#contatti">Contatti e mappa</a></p></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="currentYear">2026</span> A C Hair Dressing.</span><span>Proposta dimostrativa da sottoporre all'approvazione del salone.</span></div>
+ </div>
+</footer>
+
+<a href="tel:+39066861901" class="floating-booking" aria-label="Chiama A C Hair Dressing">CHIAMA IL SALONE ↗</a>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita" aria-hidden="true">
+ <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi immagine">×</button>
+ <img id="lightboxImage" src="" alt="Fotografia ingrandita della galleria">
+</div>
+
+<script>
+(() => {
+ const menuButton = document.getElementById("menuToggle");
+ const nav = document.getElementById("navLinks");
+
+ function closeMenu(){
+  nav.classList.remove("active");
+  menuButton.setAttribute("aria-expanded","false");
+  menuButton.setAttribute("aria-label","Apri il menu");
+  menuButton.textContent="☰";
+ }
+
+ menuButton.addEventListener("click",()=>{
+  const open=!nav.classList.contains("active");
+  nav.classList.toggle("active",open);
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.setAttribute("aria-label",open?"Chiudi il menu":"Apri il menu");
+  menuButton.textContent=open?"×":"☰";
+ });
+
+ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+
+ const lightbox=document.getElementById("lightbox");
+ const lightboxImage=document.getElementById("lightboxImage");
+ const lightboxClose=document.getElementById("lightboxClose");
+ let previousFocus=null;
+
+ function openLightbox(src,alt){
+  previousFocus=document.activeElement;
+  lightboxImage.src=src;
+  lightboxImage.alt=alt || "Fotografia ingrandita";
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden","false");
+  lightboxClose.focus();
+ }
+
+ function hideLightbox(){
+  if(!lightbox.classList.contains("open")) return;
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden","true");
+  lightboxImage.src="";
+  if(previousFocus) previousFocus.focus();
+ }
+
+ document.querySelectorAll(".gallery-item").forEach(button=>{
+  button.addEventListener("click",()=>{
+   const img=button.querySelector("img");
+   openLightbox(button.dataset.full,img ? img.alt : "");
+  });
+ });
+
+ lightboxClose.addEventListener("click",hideLightbox);
+ lightbox.addEventListener("click",event=>{
+  if(event.target===lightbox) hideLightbox();
+ });
+
+ document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+   closeMenu();
+   hideLightbox();
+  }
+ });
+
+ const items=document.querySelectorAll(".reveal");
+
+ if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting){
+     entry.target.classList.add("visible");
+     observer.unobserve(entry.target);
+    }
+   });
+  },{threshold:.12});
+
+  items.forEach(item=>observer.observe(item));
+ }else{
+  items.forEach(item=>item.classList.add("visible"));
+ }
+
+ document.getElementById("currentYear").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
+
