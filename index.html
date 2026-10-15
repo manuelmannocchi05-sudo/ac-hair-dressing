@@ -145,9 +145,142 @@ section.section{padding:100px 0}
 .map-wrap{min-height:460px;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px #0004}
 .map-wrap iframe{display:block;width:100%;height:100%;min-height:460px;border:0}
 
-.booking-section{background:var(--ivory)}
-.booking-frame{width:100%;min-height:700px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #3027190c}
-.booking-frame iframe{display:block;width:100%;height:1000px;border:0;background:white}
+/* SEZIONE PRENOTAZIONE: ESTERNO NERO E ORO */
+.booking-section{
+ background:
+  radial-gradient(ellipse at 50% 0%,rgba(200,169,106,.09),transparent 55%),
+  var(--black);
+ color:white;
+ position:relative;
+ overflow:hidden;
+}
+.booking-section:before{
+ content:"";
+ position:absolute;
+ top:0;
+ left:50%;
+ transform:translateX(-50%);
+ width:min(900px,90%);
+ height:1px;
+ background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.booking-section .container{position:relative;z-index:1}
+.booking-heading{max-width:800px;margin:0 auto 46px;text-align:center}
+.booking-heading .eyebrow{margin-bottom:18px;letter-spacing:4px}
+.booking-kicker{
+ display:block;
+ color:#bdb4a3;
+ font-size:9px;
+ font-weight:600;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ margin-bottom:17px;
+}
+.booking-heading h2{
+ color:#fff;
+ font-size:clamp(58px,8vw,94px);
+ line-height:.95;
+ letter-spacing:-1.5px;
+}
+.booking-heading h2 em{
+ display:block;
+ color:var(--lightgold);
+ font-weight:400;
+ font-style:italic;
+ margin-top:8px;
+}
+.booking-heading p{
+ max-width:520px;
+ margin:25px auto 0;
+ color:#c9c3b7;
+ font-size:13px;
+ font-weight:300;
+ line-height:1.9;
+}
+.booking-heading .booking-divider{
+ width:48px;
+ height:1px;
+ background:var(--gold);
+ margin:26px auto 0;
+}
+.booking-card{
+ max-width:1000px;
+ margin:0 auto;
+ background:var(--ivory);
+ color:var(--black);
+ padding:clamp(20px,4vw,44px);
+ border:1px solid #c8a96a;
+ box-shadow:0 25px 80px #0006;
+}
+.booking-card-heading{
+ text-align:center;
+ padding:0 0 24px;
+ margin-bottom:24px;
+ border-bottom:1px solid #e3d8c5;
+}
+.booking-card-heading .eyebrow{
+ color:#9b7a3d;
+ font-size:9px;
+ letter-spacing:2.5px;
+ margin-bottom:9px;
+}
+.booking-card-heading h3{
+ font-size:clamp(30px,4vw,42px);
+ line-height:1.1;
+ color:var(--black);
+}
+.booking-card-heading p{
+ color:#777168;
+ font-size:12px;
+ margin-top:8px;
+}
+.booking-frame{
+ width:100%;
+ min-height:700px;
+ overflow:hidden;
+ background:#fff;
+ border:1px solid #e3d8c5;
+}
+.booking-frame iframe{
+ display:block;
+ width:100%;
+ height:1000px;
+ border:0;
+ background:#fff;
+}
+.booking-fallback{
+ text-align:center;
+ font-size:11px;
+ color:#777168;
+ margin-top:17px;
+}
+.booking-fallback a{
+ color:#8a6b32;
+ text-decoration:underline;
+ text-underline-offset:3px;
+}
+.booking-actions{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:32px;
+}
+.booking-actions .btn-outline{
+ border-color:#82704b;
+ color:white;
+}
+.booking-actions .btn-outline:hover{
+ color:var(--black);
+}
+.booking-bottom-note{
+ text-align:center;
+ color:#898274;
+ font-size:9px;
+ letter-spacing:.5px;
+ margin-top:28px;
+}
 
 .final-cta{background:var(--gold);color:var(--black);padding:55px 0}
 .final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
@@ -222,7 +355,14 @@ footer a:hover{color:var(--lightgold)}
  .contact-buttons{flex-direction:column}
  .contact-buttons .btn{width:100%}
  .map-wrap,.map-wrap iframe{min-height:320px}
+ .booking-heading{margin-bottom:30px}
+ .booking-heading h2{font-size:clamp(53px,13vw,72px)}
+ .booking-heading p{font-size:12px}
+ .booking-card{padding:17px 12px}
+ .booking-card-heading{padding-bottom:19px;margin-bottom:18px}
  .booking-frame iframe{height:1100px}
+ .booking-actions{flex-direction:column;align-items:stretch}
+ .booking-actions .btn{width:100%}
  .final-cta-inner{align-items:stretch;flex-direction:column}
  .final-cta .btn{width:100%}
  .footer-grid{grid-template-columns:1fr;gap:25px}
@@ -381,24 +521,48 @@ footer a:hover{color:var(--lightgold)}
   </div>
  </section>
 
+ <!-- NUOVA SEZIONE PRENOTAZIONI -->
  <section class="section booking-section" id="prenota">
   <div class="container">
-   <div class="section-heading">
-    <span class="eyebrow">Il tuo momento</span>
-    <h2>Prenota il tuo <span>appuntamento.</span></h2>
-    <p>Scegli il servizio e verifica le disponibilità direttamente nel calendario di prenotazione.</p>
+
+   <div class="booking-heading">
+    <span class="eyebrow">A C Hair Dressing · Roma</span>
+    <h2>Il tuo momento.<em>La tua bellezza, il tuo tempo.</em></h2>
+    <p>Ritagliati un momento per te. Consulta il calendario, scegli la disponibilità più adatta e organizza il tuo prossimo appuntamento.</p>
+    <div class="booking-divider"></div>
    </div>
-   <div class="booking-frame">
-    <iframe
-     src="https://booking.eswk.it/ac-hair-dressing"
-     title="Calendario prenotazioni A C Hair Dressing"
-     style="border:0;display:block;width:100%;height:1000px;"
-     frameborder="0"
-     referrerpolicy="origin"
-     loading="lazy">
-    </iframe>
+
+   <div class="booking-card">
+    <div class="booking-card-heading">
+     <span class="eyebrow">Il prossimo passo</span>
+     <h3>Prenota il tuo appuntamento</h3>
+     <p>Consulta il calendario di prenotazione qui sotto.</p>
+    </div>
+
+    <div class="booking-frame">
+     <iframe
+      src="https://booking.eswk.it/ac-hair-dressing"
+      title="Calendario prenotazioni A C Hair Dressing"
+      style="border:0;display:block;width:100%;height:1000px;"
+      frameborder="0"
+      referrerpolicy="origin"
+      loading="lazy">
+     </iframe>
+    </div>
+
+    <p class="booking-fallback">
+     Non riesci a visualizzare il calendario?
+     <a href="https://booking.eswk.it/ac-hair-dressing" target="_blank" rel="noopener noreferrer">Apri la pagina di prenotazione</a>.
+    </p>
    </div>
-   <p class="note">Se il calendario non viene visualizzato correttamente, <a href="https://booking.eswk.it/ac-hair-dressing" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">apri la pagina di prenotazione</a>.</p>
+
+   <div class="booking-actions">
+    <a class="btn btn-outline" href="#servizi">← TORNA AI SERVIZI</a>
+    <a class="btn btn-gold" href="tel:+39066861901">CONTATTA IL SALONE ↗</a>
+   </div>
+
+   <p class="booking-bottom-note">A C HAIR DRESSING · ROMA · IL TUO MOMENTO DI BELLEZZA</p>
+
   </div>
  </section>
 
