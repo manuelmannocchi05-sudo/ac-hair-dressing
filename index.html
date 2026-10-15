@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#151411">
 <title>A C Hair Dressing | Roma</title>
-<meta name="description" content="A C Hair Dressing a Roma, in Via Plauto 32. Scopri il salone e contatta il team per informazioni e appuntamenti.">
+<meta name="description" content="A C Hair Dressing a Roma, in Via Plauto 32. Scopri il salone e consulta il calendario per gli appuntamenti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://booking.eswk.it/widget.js"></script>
 
 <style>
 :root{
@@ -25,7 +26,7 @@
   --sans:'Inter',Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:var(--sans);background:var(--ivory);color:var(--black);line-height:1.7}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -144,6 +145,10 @@ section.section{padding:100px 0}
 .map-wrap{min-height:460px;overflow:hidden;border:1px solid #65583e;background:#e8e3d8;box-shadow:0 15px 45px #0004}
 .map-wrap iframe{display:block;width:100%;height:100%;min-height:460px;border:0}
 
+.booking-section{background:var(--ivory)}
+.booking-frame{width:100%;min-height:700px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #3027190c}
+.booking-frame iframe{display:block;width:100%;height:1000px;border:0;background:white}
+
 .final-cta{background:var(--gold);color:var(--black);padding:55px 0}
 .final-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
 .final-cta h2{font-size:clamp(35px,4.5vw,52px)}
@@ -217,6 +222,7 @@ footer a:hover{color:var(--lightgold)}
  .contact-buttons{flex-direction:column}
  .contact-buttons .btn{width:100%}
  .map-wrap,.map-wrap iframe{min-height:320px}
+ .booking-frame iframe{height:1100px}
  .final-cta-inner{align-items:stretch;flex-direction:column}
  .final-cta .btn{width:100%}
  .footer-grid{grid-template-columns:1fr;gap:25px}
@@ -242,10 +248,7 @@ footer a:hover{color:var(--lightgold)}
     <li><a href="#salone">Il salone</a></li>
     <li><a href="#galleria">Galleria</a></li>
     <li><a href="#contatti">Contatti</a></li>
-   
-
-<li><a class="nav-cta" href="https://booking.eswk.it/ac-hair-dressing" target="_blank" rel="noopener noreferrer">PRENOTA ORA ↗</a></li>
-
+    <li><a class="nav-cta" href="#prenota">PRENOTA ORA ↓</a></li>
    </ul>
   </nav>
  </div>
@@ -292,7 +295,7 @@ footer a:hover{color:var(--lightgold)}
       <div class="service-heading-row"><h3>Taglio e styling</h3><span class="service-symbol" aria-hidden="true">✂</span></div>
       <p>Un look studiato per valorizzare la personalità e accompagnare il tuo stile quotidiano.</p>
       <div class="service-details"><span class="service-detail">Stile personale</span><span class="service-detail">Cura dei dettagli</span></div>
-      <a href="tel:+39066861901" class="service-book"><span>CHIEDI INFORMAZIONI</span><span>↗</span></a>
+      <a href="#prenota" class="service-book"><span>PRENOTA UN APPUNTAMENTO</span><span>↓</span></a>
      </div>
     </article>
 
@@ -306,16 +309,14 @@ footer a:hover{color:var(--lightgold)}
       <div class="service-heading-row"><h3>Colore e trattamenti</h3><span class="service-symbol" aria-hidden="true">✧</span></div>
       <p>Scopri le possibilità per rinnovare il tuo look e valorizzare i capelli. Disponibilità e trattamenti sono da confermare direttamente con il salone.</p>
       <div class="service-details"><span class="service-detail">Consulenza</span><span class="service-detail">Look personalizzato</span></div>
-      <a href="tel:+39066861901" class="service-book"><span>CHIEDI INFORMAZIONI</span><span>↗</span></a>
+      <a href="#prenota" class="service-book"><span>PRENOTA UN APPUNTAMENTO</span><span>↓</span></a>
      </div>
     </article>
    </div>
 
    <div class="service-footer reveal">
-    
-<p>Il tuo prossimo appuntamento, con la cura che meriti.</p>
-<a class="btn btn-gold" href="tel:+39066861901">CONTATTA IL SALONE <span aria-hidden="true">↗</span></a>
-
+    <p>Il tuo prossimo appuntamento, con la cura che meriti.</p>
+    <a class="btn btn-gold" href="#prenota">PRENOTA ORA <span aria-hidden="true">↓</span></a>
    </div>
    <p class="note">Categorie illustrative da verificare con il salone prima della pubblicazione definitiva. Immagini non reali del locale.</p>
   </div>
@@ -334,7 +335,7 @@ footer a:hover{color:var(--lightgold)}
     <p>Il tuo look racconta qualcosa di te. Per questo scegliere un nuovo stile dovrebbe partire dalle tue preferenze e dal risultato che desideri.</p>
     <p>A C Hair Dressing si trova in Via Plauto 32, Roma. Contatta direttamente il salone per conoscere i servizi disponibili e organizzare il tuo appuntamento.</p>
     <div class="about-rule"></div>
-    <a class="btn btn-gold" href="tel:+39066861901">PARLIAMONE ↗</a>
+    <a class="btn btn-gold" href="#prenota">PRENOTA IL TUO MOMENTO ↓</a>
    </div>
   </div>
  </section>
@@ -367,7 +368,7 @@ footer a:hover{color:var(--lightgold)}
      <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><div><strong>Indirizzo</strong><p>Via Plauto 32, Roma</p></div></div>
      <div class="contact-item"><span class="contact-icon" aria-hidden="true">☎</span><div><strong>Telefono</strong><a href="tel:+39066861901">06 6861901</a></div></div>
      <div class="contact-item"><span class="contact-icon" aria-hidden="true">◷</span><div><strong>Orari</strong><p>Contatta il salone per verificare gli orari di apertura.</p></div></div>
-     <div class="contact-item"><span class="contact-icon" aria-hidden="true">✧</span><div><strong>Appuntamenti</strong><p>Chiama per informazioni e disponibilità.</p></div></div>
+     <div class="contact-item"><span class="contact-icon" aria-hidden="true">✧</span><div><strong>Appuntamenti</strong><p>Consulta il calendario per verificare le disponibilità.</p></div></div>
     </div>
     <div class="contact-buttons">
      <a class="btn btn-gold" href="tel:+39066861901">CHIAMA IL SALONE ↗</a>
@@ -380,10 +381,31 @@ footer a:hover{color:var(--lightgold)}
   </div>
  </section>
 
+ <section class="section booking-section" id="prenota">
+  <div class="container">
+   <div class="section-heading">
+    <span class="eyebrow">Il tuo momento</span>
+    <h2>Prenota il tuo <span>appuntamento.</span></h2>
+    <p>Scegli il servizio e verifica le disponibilità direttamente nel calendario di prenotazione.</p>
+   </div>
+   <div class="booking-frame">
+    <iframe
+     src="https://booking.eswk.it/ac-hair-dressing"
+     title="Calendario prenotazioni A C Hair Dressing"
+     style="border:0;display:block;width:100%;height:1000px;"
+     frameborder="0"
+     referrerpolicy="origin"
+     loading="lazy">
+    </iframe>
+   </div>
+   <p class="note">Se il calendario non viene visualizzato correttamente, <a href="https://booking.eswk.it/ac-hair-dressing" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">apri la pagina di prenotazione</a>.</p>
+  </div>
+ </section>
+
  <section class="final-cta">
   <div class="container final-cta-inner">
-   <div><h2>Il tuo prossimo appuntamento.</h2><p>Contatta il salone per conoscere disponibilità e modalità di prenotazione.</p></div>
-   <a class="btn btn-dark" href="tel:+39066861901">CHIAMA 06 6861901 ↗</a>
+   <div><h2>Il tuo prossimo appuntamento.</h2><p>Consulta il calendario e verifica le disponibilità.</p></div>
+   <a class="btn btn-dark" href="#prenota">PRENOTA ORA ↓</a>
   </div>
  </section>
 </main>
@@ -393,13 +415,13 @@ footer a:hover{color:var(--lightgold)}
   <div class="footer-grid">
    <div><div class="footer-brand">A C <span>Hair Dressing</span></div><p class="footer-description">Un progetto dimostrativo per A C Hair Dressing, Roma. Informazioni e servizi da confermare con il salone.</p></div>
    <div><h3>Contatti</h3><p>Via Plauto 32<br>Roma</p><p><a href="tel:+39066861901">06 6861901</a></p></div>
-   <div><h3>Esplora</h3><p><a href="#servizi">Servizi</a></p><p><a href="#salone">Il salone</a></p><p><a href="#galleria">Galleria</a></p><p><a href="#contatti">Contatti e mappa</a></p></div>
+   <div><h3>Esplora</h3><p><a href="#servizi">Servizi</a></p><p><a href="#salone">Il salone</a></p><p><a href="#galleria">Galleria</a></p><p><a href="#contatti">Contatti e mappa</a></p><p><a href="#prenota">Prenota ora</a></p></div>
   </div>
   <div class="footer-bottom"><span>© <span id="currentYear">2026</span> A C Hair Dressing.</span><span>Proposta dimostrativa da sottoporre all'approvazione del salone.</span></div>
  </div>
 </footer>
 
-<a href="tel:+39066861901" class="floating-booking" aria-label="Chiama A C Hair Dressing">CHIAMA IL SALONE ↗</a>
+<a href="#prenota" class="floating-booking">PRENOTA ORA ↓</a>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita" aria-hidden="true">
  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi immagine">×</button>
@@ -491,4 +513,3 @@ footer a:hover{color:var(--lightgold)}
 </script>
 </body>
 </html>
-
